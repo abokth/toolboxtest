@@ -10,7 +10,7 @@ LABEL com.github.containers.toolbox="true" \
 RUN gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
 RUN gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
 
-COPY extra-sources
+COPY extra-sources /
 RUN tee -a <extra-sources /etc/apt/sources.list
 
 COPY extra-packages /
